@@ -89,8 +89,10 @@
   </div>
   <div{{ content_attributes.addClass('node__content') }}>
     <div class="wrapper">
-      <h2>{{ content.field_top_title }}</h2>
-      {{ content.field_subtitle }}
+      <div class="top-content">
+        <h2>{{ content.field_top_title }}</h2>
+        {{ content.field_subtitle }}
+      </div>
       <div class="link-area" style='background: url("{{ file_url(content.field_background_image['#items'].entity.uri.value) }}")'>
         <h3>{{ content.field_link_title }}</h3>
         {{ content.field_link_teaser }}
