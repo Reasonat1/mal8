@@ -5,6 +5,8 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
+    var max_mobile_screen = 768;
+    var is_mobile = ($(window).width() <= max_mobile_screen);
 
         /*****  hamburger menu  ********/
 
@@ -32,7 +34,7 @@
      });
      
 
-        /********  scroll ********/
+/********  scroll ********/
 
         var scroll_pos = 0;
         $(document).scroll(function(e) {
@@ -54,7 +56,7 @@
               $("body").addClass('not-scroll');
         }
 
-        /*****  form  ********/
+/*****  form  ********/
 
         $("input").on("focus",function(){
             $(this).parent().addClass("focus");
@@ -78,8 +80,6 @@
             }
         });
 
-        /*****  form  ********/
-
         var form = $('form')
         var navbar = $('header')
         form.find(':input').on('invalid', function (event) {
@@ -95,6 +95,27 @@
                 $('html,body').scrollTop(elementOffset)
             }
         });
+
+/******  front *********/
+
+if($('body').hasClass('path-frontpage')){
+
+    if(!is_mobile){
+        $('main article').css({'height': $(window).height()+'px'});
+    }
+
+    $(window).resize(function() {
+      if(!is_mobile){
+          $('main article').css({'height': $(window).height()+'px'});
+      } else{
+          $('main article').css({'height': "auto"});
+      }
+    });
+
+}
+
+
+
 
 
     }

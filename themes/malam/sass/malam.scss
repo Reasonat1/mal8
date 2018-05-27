@@ -1,3 +1,16 @@
+/*******  fonts  ***************/
+
+ @font-face {
+    font-family: 'OE Doo Pro';
+    src: url('../fonts/oedoopro-book-webfont.eot');
+    src: url('../fonts/oedoopro-book-webfont.eot?iefix') format('eot'),
+         url('../fonts/oedoopro-book-webfont.woff') format('woff'),
+         url('../fonts/oedoopro-book-webfont.svg#webfontXqjqfm2I') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+
+
 
  @mixin res($media) {
   @if $media == s {
@@ -16,7 +29,7 @@
 
 /******   colors  *********/
 
-$default: #4c4c4c;
+$default: #1f1b5f;
 
 /********  mixin *********/
 
@@ -69,6 +82,9 @@ a, a:link, a:visited{
 body{
     color: $default;
     display: block!important;
+    font-family: "OE Doo Pro";
+    font-size: 16px;
+    line-height: 22px;
 }
 
 img{
@@ -194,4 +210,88 @@ img{
 
 .open-menu .region-menu{
   right: 0;
+}
+
+
+/********  front   *********/
+
+.path-frontpage{
+  #block-page-title-block{
+    display: none;
+  }
+  article{
+    position: relative;
+    .logos{
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      .israel{
+        left: 20px;
+        float: left;
+        position: relative;
+      }
+      .logo-hp{
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .wrapper-top-home-page{
+      background-position: top!important;
+      background-repeat: no-repeat!important;
+      background-size: cover!important;   
+      width: 100%;
+      height: 100%;
+    }
+    .node__content{
+      position: absolute;
+      top: 20px;
+      left:0;
+      width: 100%;
+      height: 100%;
+      @include center;
+    }
+    .wrapper{
+      color: #fff;
+      a{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.scroll-button{
+  a{
+    color:#fff;
+    position: relative;
+    display:block;
+    padding:10px 0 35px;
+    &:hover, &:focus{
+      text-decoration:none;
+    }
+    &:after{
+      content: "";
+      width: 100%;
+      height: 30px;
+      background: url("../images/white_arrow_down.png") no-repeat center bottom;
+      display: inline-block;
+      animation: bounce 2s infinite alternate;
+      -webkit-animation: bounce 1.5s infinite alternate;
+    }
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(30px);
+    }
+    to {
+      transform: translateY(-7px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(30px);
+    }
+    to {
+      transform: translateY(-7px);
+    }
+  }
 }
