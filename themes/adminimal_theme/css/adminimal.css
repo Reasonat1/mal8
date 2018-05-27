@@ -679,12 +679,6 @@ body.adminimal {
   display: none;
 }
 
-.field--type-image{
-  overflow: hidden;
-  margin-bottom: 50px;
-  position: relative;
-}
-
 .field--type-image table{
   position: relative;
 }
