@@ -45,14 +45,17 @@
 <div class="layout-container">
 
 {% if not is_front %}
-  <header role="banner">
-    <div id="hamburger-icon" class="only-mobile">
-      <span class="line1"></span>
-      <span class="line2"></span>
-      <span class="line3"></span>
-    </div>
-    {{ page.header }}
-  </header>
+        <header role="banner">
+          <div class="wrapper">
+            <div class="logo-menu"><a href="/" alt="homepage"><img src="/themes/malam/images/menu-logo.png" alt="logo"></a></div>
+            <div id="hamburger-icon" class="only-mobile">
+              <span class="line1"></span>
+              <span class="line2"></span>
+              <span class="line3"></span>
+            </div>
+            {{ page.header }}
+          </div>
+        </header>
 {% endif %}
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
