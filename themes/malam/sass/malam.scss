@@ -204,9 +204,10 @@ header{
     background: -o-linear-gradient(178deg,#5a4187,#b30276);
     background: -moz-linear-gradient(178deg,#5a4187,#b30276);
     background: linear-gradient(178deg,#5a4187,#b30276);
-    height: calc(100% - 62px);
     @include res(s-m){
       position: fixed;
+      height: calc(100% - 62px);
+      overflow: auto;
       width: 100%;
       right: -100%;
       transition: all 0.5s;
@@ -271,7 +272,9 @@ header{
     padding: 0 15px;
     ul.menu{
       margin: 0;
-      padding: 0;
+      min-height: 100%;
+      padding: 0 0 70px;
+      position: relative;
       li{
         a{
           color: #fff;
@@ -283,6 +286,39 @@ header{
           a{
             font-size: 1.25em;
             line-height: 1.2em;
+          }
+        }
+        &:nth-last-child(2){
+          margin-bottom: 100px;
+          @include res(s-m){
+            margin-bottom: 0;
+          }
+          a{
+            border-bottom: none;
+            @include res(s-m){
+              border-bottom: 1px solid #995b99;
+            }
+          }   
+        }
+        &:last-child{
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          box-sizing: border-box;
+          left: 0;
+          @iclude res(s-m){
+            position: relative;
+            bottom: auto;
+          }
+          a{
+            background: url("../images/icon-last-menu.png") no-repeat left center;
+            padding-left: 50px;
+            border-bottom: none;
+            border-top: 1px solid #995b99;
+            padding-top: 20px;
+            @include res(s-m){
+              border-top: none;
+            }
           }
         }
       }
