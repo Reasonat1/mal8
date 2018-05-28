@@ -46,7 +46,6 @@
 $default: #1f1b5f;
 $pink: #c80077;
 $dark-pink: #AD0A6C;
-$blue: #1f1b5f;
 $gray: #242b5f;
 /********  mixin *********/
 
@@ -165,10 +164,109 @@ img{
     margin-bottom: 10px;
   }
   a{
-    color: blue;
   }
 }
 
+/******** header ***********/
+
+header{
+  width: 232px;
+  position: absolute;
+  left: 0;
+  position: sticky;
+  top: 0;
+  .wrapper{
+    position: absolute;
+  }
+  .logo-menu{
+    padding: 12px 0;
+    text-align: center;
+    background-color: $default;
+  }
+  .region-header{
+    background: #a70b78;
+    background: -webkit-linear-gradient(178deg,#5a4187,#b30276);
+    background: -o-linear-gradient(178deg,#5a4187,#b30276);
+    background: -moz-linear-gradient(178deg,#5a4187,#b30276);
+    background: linear-gradient(178deg,#5a4187,#b30276);
+    z-index: 200;
+  }
+  #block-search-form-block{
+    position: relative;
+    width: 190px;
+    margin: 0 auto 0px;
+    max-width: 98%;
+    padding: 25px 0 20px;
+    form{
+      position: relative;
+    }
+    .js-form-item{
+      margin: 0;
+      input{
+        width: 100%;
+        border-radius: 1px;
+        border: 1px solid #242b5f;
+        background-color: #9474aa;
+        height: 40px;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        padding: 12px 14px;
+        box-sizing: border-box;
+      }
+      label{
+        height: auto;
+        width: auto;
+        clip: auto;
+        color: $default;
+        padding: 12px 14px 6px;
+        &:after{
+          display: none;
+        }
+      }
+      &.focus{
+        input{
+          background-color: #fff;
+        }
+        label{
+          display: none;
+        }
+      }
+    }
+    .form-actions{
+      position: absolute;
+      right: 10px;
+      top: 11px;
+      input{
+        background: url("../images/search-icon.png") no-repeat center center;
+        width: 17px;
+        height: 17px;
+        text-indent: -9999px;
+        border: none;
+      }
+    }
+  }
+  .menu--main{
+    padding: 0 15px;
+    ul.menu{
+      margin: 0;
+      padding: 0;
+      li{
+        a{
+          color: #fff;
+          padding: 13px 0;
+          display: block;
+          border-bottom: 1px solid #995b99;
+        }
+        &:first-child{
+          a{
+            font-size: 1.25em;
+            line-height: 1.2em;
+          }
+        }
+      }
+    }
+  }
+}
 /*********  responsive menu  *********/
 
 #hamburger-icon{
@@ -444,7 +542,7 @@ img{
 #block-views-block-success-stories-block-1{
   .view-header{
     h3{
-      color: $blue;
+      color: $default;
       font-family: "OE Doo Pro - regular";
       font-size: 1.75em;
       line-height: 0.9em;  
