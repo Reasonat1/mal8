@@ -171,17 +171,32 @@ img{
 
 header{
   width: 232px;
-  position: absolute;
   left: 0;
   position: sticky;
   top: 0;
+  z-index: 200;
+  @include res(s-m){
+    position: fixed;
+    width: 100%;
+  }
   .wrapper{
     position: absolute;
+    height: 100%;
+    @include res(s-m){
+      width: 100%;
+    }
   }
   .logo-menu{
     padding: 12px 0;
     text-align: center;
     background-color: $default;
+    overflow: hidden;
+    @include res(s-m){
+      padding: 12px 4%;
+      a{
+        float: left;
+      }
+    }
   }
   .region-header{
     background: #a70b78;
@@ -189,7 +204,14 @@ header{
     background: -o-linear-gradient(178deg,#5a4187,#b30276);
     background: -moz-linear-gradient(178deg,#5a4187,#b30276);
     background: linear-gradient(178deg,#5a4187,#b30276);
-    z-index: 200;
+    height: calc(100% - 62px);
+    @include res(s-m){
+      position: fixed;
+      width: 100%;
+      right: -100%;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+    }
   }
   #block-search-form-block{
     position: relative;
@@ -270,18 +292,14 @@ header{
 /*********  responsive menu  *********/
 
 #hamburger-icon{
+  position: absolute;
+  right: 4%;
+  top: 19px;
   z-index: 1300;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  float: right;
-  @include res(m){
-    padding-top: 6px;
-  }
-  @include res(s){
-    margin-top: 7px;
-  }
   span{
     width: 34px;
     height: 4px;
@@ -296,7 +314,7 @@ header{
 
 .open-menu #hamburger-icon{
   animation: smallbig 0.6s forwards;
-  margin-top: 4px;
+  margin-top: -2px;
   span{
     -webkit-transition-delay: 0.2s;
     -o-transition-delay: 0.2s;
@@ -336,7 +354,7 @@ header{
   }
 }
 
-.open-menu .region-menu{
+.open-menu header .region-header{
   right: 0;
 }
 
@@ -412,7 +430,7 @@ header{
       height: calc(100% - 75px);
       @include res(s-m){
         height: 100%;
-        padding-top: 45px;
+        padding-top: 90px;
         padding-bottom: 45px;
         top: 0;
       }
@@ -430,6 +448,9 @@ header{
           font-family: 'OE Doo Pro - regular';
           font-size: 2.5em;
           line-height: 1.12em;
+          @include res(s-m){
+            font-size: 2em;
+          }
         }
         .field--name-field-subtitle{
           font-family: 'OE Doo Pro - regular';

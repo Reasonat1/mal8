@@ -119,6 +119,17 @@ if($('body').hasClass('path-frontpage')){
 }
 
 
+/************  sidebar menu  ************/
+
+    if(!is_mobile){
+        $('header .wrapper').css({'min-height': $(window).height()+'px'});
+    }
+
+    $(window).resize(function() {
+      if(!is_mobile){
+        $('header .wrapper').css({'min-height': $(window).height()+'px'});
+      }
+    });
 
 
     }
@@ -146,7 +157,7 @@ jQuery(function(){
           480: {
             items: 2
           },
-          768: {
+          980: {
             items: 3
           }
         }
