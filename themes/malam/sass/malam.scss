@@ -237,18 +237,31 @@ img{
   article{
     position: relative;
     min-height: 630px;
+    @include res(s-m){
+      height: auto!important;
+      min-height: 0;
+    }
     .logos{
       position: absolute;
       top: 20px;
       width: 100%;
+      left: 0;
       .israel{
         left: 20px;
         float: left;
         position: relative;
+        @include res(s-m){
+          width: 25px;
+        }
       }
       .logo-hp{
         width: 100%;
         text-align: center;
+        img{
+          @include res(s-m){
+            width: 120px;
+          }
+        }
       }
     }
     .wrapper-top-home-page{
@@ -257,13 +270,23 @@ img{
       background-size: cover!important;   
       width: 100%;
       height: 100%;
+      @include res(s-m){
+        box-sizing: border-box;
+        padding: 0 4%;
+      }
     }
     .node__content{
-      position: absolute;
+      position: relative;
       top: 75px;
       left:0;
       width: 100%;
       height: calc(100% - 75px);
+      @include res(s-m){
+        height: 100%;
+        padding-top: 45px;
+        padding-bottom: 45px;
+        top: 0;
+      }
       @include center;
       .top-content{
         width: 710px;
@@ -291,12 +314,15 @@ img{
       margin: 35px auto 0;
       padding: 106px 37px 30px 35px;
       width: 881px;
-      max-width: 96%;
+      max-width: 100%;
       overflow: hidden;
       background-position: top!important;
       background-repeat: no-repeat!important;
       background-size: cover!important;  
       box-sizing: border-box;
+      @include res(s-m){
+        padding: 30px 35px;
+      }
       h3{
         margin: 0;
         font-size: 1em;
@@ -313,10 +339,18 @@ img{
         line-height: 27px;   
         float: left;
         width: calc(100% - 180px);
+        @include res(s-m){
+          width: 100%;
+        }
       }
       .field--name-field-the-link{
         float: right;
         width: 140px;
+        @include res(s-m){
+          float: none;
+          clear: both;
+          padding-top: 10px;
+        }
         a{
           @include button;
         }
@@ -324,6 +358,7 @@ img{
     }
     .wrapper{
       color: #fff;
+      width: 100%;
       a{
         color: #fff;
       }
@@ -334,6 +369,9 @@ img{
 .scroll-button{
   margin-top: 24px;
   text-align: center;
+  @include res(s-m){
+    display: none;
+  }
   a{
     color:#fff;
     position: relative;

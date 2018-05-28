@@ -82,23 +82,24 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  <div class="wrapper-top-home-page" style='background: url("{{ file_url(content.field_top_background_image['#items'].entity.uri.value) }}")'></div>
-  <div class="logos">
-    <div class="israel"><img src="/themes/malam/images/israel.png" alt="Emblem of Israel"></div>
-    <div class="logo-hp"><a href="/" alt="homepage"><img src="/themes/malam/images/logo-hp.png" alt="logo"></a></div>
-  </div>
-  <div{{ content_attributes.addClass('node__content') }}>
-    <div class="wrapper">
-      <div class="top-content">
-        <h2>{{ content.field_top_title }}</h2>
-        {{ content.field_subtitle }}
+  <div class="wrapper-top-home-page" style='background: url("{{ file_url(content.field_top_background_image['#items'].entity.uri.value) }}")'>
+    <div class="logos">
+      <div class="israel"><img src="/themes/malam/images/israel.png" alt="Emblem of Israel"></div>
+      <div class="logo-hp"><a href="/" alt="homepage"><img src="/themes/malam/images/logo-hp.png" alt="logo"></a></div>
+    </div>
+    <div{{ content_attributes.addClass('node__content') }}>
+      <div class="wrapper">
+        <div class="top-content">
+          <h2>{{ content.field_top_title }}</h2>
+          {{ content.field_subtitle }}
+        </div>
+        <div class="link-area" style='background: url("{{ file_url(content.field_background_image['#items'].entity.uri.value) }}")'>
+          <h3>{{ content.field_link_title }}</h3>
+          {{ content.field_link_teaser }}
+          {{ content.field_the_link }}
+        </div>
+        <div class="scroll-button"><a href="#">Scroll down</a></div>
       </div>
-      <div class="link-area" style='background: url("{{ file_url(content.field_background_image['#items'].entity.uri.value) }}")'>
-        <h3>{{ content.field_link_title }}</h3>
-        {{ content.field_link_teaser }}
-        {{ content.field_the_link }}
-      </div>
-      <div class="scroll-button"><a href="#">Scroll down</a></div>
     </div>
   </div>
 </article>
