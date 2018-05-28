@@ -112,8 +112,11 @@ if($('body').hasClass('path-frontpage')){
       }
     });
 
-}
+    $('.scroll-button span').on('click',function (e) {
+      $("html, body").animate({ scrollTop: $("#second").offset().top},1000);
+    });
 
+}
 
 
 
@@ -123,3 +126,30 @@ if($('body').hasClass('path-frontpage')){
   }
 
 })(jQuery, Drupal);
+
+
+/****  success story gallery - hp  *******/
+
+jQuery(function(){  
+  if (jQuery("#block-views-block-success-stories-block-1 .view-content .views-row").length != '1') { 
+    jQuery('#block-views-block-success-stories-block-1 .view-content').owlCarousel({
+      autoplay:false,
+      loop:true,
+      margin:21,
+      nav: true,
+      dots: false,
+      items:3,
+      responsive: {
+          0: {
+            items: 1
+          },
+          480: {
+            items: 2
+          },
+          768: {
+            items: 3
+          }
+        }
+    }); 
+  }
+})
