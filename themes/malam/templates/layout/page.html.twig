@@ -103,10 +103,12 @@
 
   </main>
 
-  {% if page.footer %}
     <footer role="contentinfo">
-      {{ page.footer }}
+      <div class="top-footer">
+      {{ page.footer_left }}
+      {{ page.footer_right }}
+      </div>
+      {{ page.bottom_footer }}
     </footer>
-  {% endif %}
 
 </div>{# /.layout-container #}

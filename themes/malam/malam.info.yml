@@ -18,5 +18,7 @@ regions:
   content_bottom: Content Bottom
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
-  footer: Footer
+  footer_right: Right Footer
+  footer_left: Left Footer
+  bottom_footer: Bottom Footer
   message: Message
