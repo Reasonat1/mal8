@@ -1,0 +1,7 @@
+name: 'reasonat_dev'
+type: module
+description: 'reasonat_dev.'
+libraries:
+  - reasonat_dev/reasonat_dev
+package: Development
+core: 8.x

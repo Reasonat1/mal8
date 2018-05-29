@@ -1,0 +1,880 @@
+/*******  fonts  ***************/
+
+@import url(//fonts.googleapis.com/earlyaccess/opensanshebrew.css); 
+
+ @font-face {
+    font-family: 'OE Doo Pro';
+    src: url('../fonts/oedoopro-book-webfont.eot');
+    src: url('../fonts/oedoopro-book-webfont.eot?iefix') format('eot'),
+         url('../fonts/oedoopro-book-webfont.woff') format('woff'),
+         url('../fonts/oedoopro-book-webfont.svg#webfontXqjqfm2I') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+
+ @font-face {
+    font-family: 'OE Doo Pro - regular';
+    src: url('../fonts/oedoopro-regular-webfont.eot');
+    src: url('../fonts/oedoopro-regular-webfont.eot?iefix') format('eot'),
+         url('../fonts/oedoopro-regular-webfont.woff') format('woff'),
+         url('../fonts/oedoopro-regular-webfont.svg#webfontXqjqfm2I') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+
+
+ @mixin res($media) {
+  @if $media == s {
+    @media (max-width: 481px) { @content; }
+  }
+  @else if $media == m {
+    @media (min-width: 481px) and (max-width: 768px) { @content; }
+  }
+  @if $media == s-m {
+    @media (max-width: 768px) { @content; }
+  }
+  @if $media == l {
+    @media (min-width: 768px) and (max-width: 1100px) { @content; }
+  }
+  @if $media == s-m-l {
+    @media (max-width: 1100px) { @content; }
+  }
+}
+
+/******   colors  *********/
+
+$default: #1f1b5f;
+$pink: #c80077;
+$dark-pink: #AD0A6C;
+$gray: #242b5f;
+/********  mixin *********/
+
+@mixin width(){
+  width: 1030px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 4%;
+  box-sizing: border-box;
+}
+
+@mixin center(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixin button(){
+  background-color: $pink;
+  font-size: 0.875em;
+  color: #fff;
+  padding: 13px 32px 10px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  border: none;
+  font-family: 'OE Doo Pro - regular';
+  display: block;
+  &:hover{
+    background-color: $dark-pink;
+  }
+}
+
+/********  general  ******/
+
+a, a:link, a:visited{
+  text-decoration: none;
+  color: $default;
+}
+
+body{
+    color: $default;
+    display: block!important;
+    font-family: "OE Doo Pro";
+    font-size: 16px;
+    line-height: 22px;
+    background-color: #f8f8f8;
+}
+
+main{
+  padding-left: 232px;
+  @include res(s-m){
+    padding-left: 0;
+  }
+  .layout-content{
+    @include width;
+  }
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  margin-bottom: -5px;
+}
+
+.only-mobile{
+  display: none;
+  @include res(s-m){
+    display: block;
+  }
+}
+
+.only-desktop{
+  @include res(s-m){
+    display: none!important;
+  }
+}
+
+.toolbar-tray span, .toolbar-tray a {
+    color: #565656;
+    padding: 1em 11px!important;
+    text-decoration: none;
+    display: block;
+}
+
+.toolbar-icon:before{
+  background: none!important;
+}
+
+.toolbar-icon-admin-toolbar-tools-help:before{
+    background-attachment: scroll!important;
+    background-color: transparent!important;
+    background-position: center center!important;
+    background-repeat: no-repeat!important;
+    background-size: 100% auto!important;
+    background-image: url(/modules/admin_toolbar/admin_toolbar_tools/misc/icons/ffffff/d8-item.svg)!important;
+}
+
+.width-wrapper{
+  @include width;
+}
+
+.field--name-body{
+  img{
+    margin-bottom: 10px;
+  }
+  a{
+  }
+}
+
+/******** header ***********/
+
+header{
+  width: 232px;
+  left: 0;
+  float: left;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  min-height: 630px;
+  @include res(s-m){
+    position: fixed;
+    width: 100%;
+  }
+  .wrapper{
+    position: absolute;
+    height: 100%;
+    @include res(s-m){
+      width: 100%;
+    }
+  }
+  .logo-menu{
+    padding: 12px 0;
+    text-align: center;
+    background-color: $default;
+    overflow: hidden;
+    @include res(s-m){
+      padding: 12px 4%;
+      a{
+        float: left;
+      }
+    }
+  }
+  .region-header{
+    background: #a70b78;
+    background: -webkit-linear-gradient(178deg,#5a4187,#b30276);
+    background: -o-linear-gradient(178deg,#5a4187,#b30276);
+    background: -moz-linear-gradient(178deg,#5a4187,#b30276);
+    background: linear-gradient(178deg,#5a4187,#b30276);
+    height: calc(100% - 62px);
+    box-sizing: border-box;
+    @include res(s-m){
+      position: fixed;
+      overflow: auto;
+      width: 100%;
+      right: -100%;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+    }
+  }
+  #block-search-form-block{
+    position: relative;
+    width: 190px;
+    margin: 0 auto 0px;
+    max-width: 98%;
+    padding: 25px 0 20px;
+    form{
+      position: relative;
+    }
+    .js-form-item{
+      margin: 0;
+      input{
+        width: 100%;
+        border-radius: 1px;
+        border: 1px solid #242b5f;
+        background-color: #9474aa;
+        height: 40px;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        padding: 12px 14px;
+        box-sizing: border-box;
+      }
+      label{
+        height: auto;
+        width: auto;
+        clip: auto;
+        color: $default;
+        padding: 12px 14px 6px;
+        &:after{
+          display: none;
+        }
+      }
+      &.focus{
+        input{
+          background-color: #fff;
+        }
+        label{
+          display: none;
+        }
+      }
+    }
+    .form-actions{
+      position: absolute;
+      right: 10px;
+      top: 11px;
+      input{
+        background: url("../images/search-icon.png") no-repeat center center;
+        width: 17px;
+        height: 17px;
+        text-indent: -9999px;
+        border: none;
+      }
+    }
+  }
+  .menu--main{
+    padding: 0 15px;
+    height: calc(100% - 85px);
+    ul.menu{
+      margin: 0;
+      min-height: 100%;
+      padding: 0 0 70px;
+      position: relative;
+      box-sizing: border-box;
+      li{
+        a{
+          color: #fff;
+          padding: 13px 0;
+          display: block;
+          border-bottom: 1px solid #995b99;
+        }
+        &:first-child{
+          a{
+            font-size: 1.25em;
+            line-height: 1.2em;
+          }
+        }
+        &:nth-last-child(2){
+          margin-bottom: 100px;
+          @include res(s-m){
+            margin-bottom: 0;
+          }
+          a{
+            border-bottom: none;
+            @include res(s-m){
+              border-bottom: 1px solid #995b99;
+            }
+          }   
+        }
+        &:last-child{
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          box-sizing: border-box;
+          left: 0;
+          @iclude res(s-m){
+            position: relative;
+            bottom: auto;
+          }
+          a{
+            background: url("../images/icon-last-menu.png") no-repeat left center;
+            padding-left: 50px;
+            border-bottom: none;
+            border-top: 1px solid #995b99;
+            padding-top: 20px;
+            @include res(s-m){
+              border-top: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*********  responsive menu  *********/
+
+#hamburger-icon{
+  position: absolute;
+  right: 4%;
+  top: 19px;
+  z-index: 1300;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  span{
+    width: 34px;
+    height: 4px;
+    background-color: #fff;
+    margin-bottom: 6px;
+    display: block;  
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.open-menu #hamburger-icon{
+  animation: smallbig 0.6s forwards;
+  margin-top: -2px;
+  span{
+    -webkit-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    margin-bottom: 9px;
+  }
+  .line2{
+    opacity: 0;
+  }
+  .line1{
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);    
+  }
+  .line3{
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);    
+  }
+}
+
+@keyframes smallbig{
+  0%, 100%{
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50%{
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+.open-menu header .region-header{
+  right: 0;
+}
+
+/********  footer  **********/
+
+footer{
+  clear: both;
+  background-color: $default;
+  color: #fff;
+  padding: 47px 0 32px;
+  float: left;
+  width: 100%;
+  a, ul.menu a{
+    color: #fff;
+    &.is-active, .active{
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+  .width-wrapper{
+    width: 1120px;
+  }
+  ul.menu{
+    margin: 0;
+    padding: 0;
+  }
+  .top-footer{
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #8f8daf;
+    float: left;
+    width: 100%;
+    .region-footer-right{
+      width: 31%;
+      float: left;
+      @include res(s-m){
+        width: 100%;
+      }
+      .innovate{
+        .field--name-body a{
+          background: url("../images/email.png") no-repeat left 10px center $pink;
+          color: #fff;
+          font-size: 1.1em;
+          font-weight: 500;
+          padding: 12px 21px 9px 62px;
+          float: right;
+          width: 100%;
+          box-sizing: border-box;
+          font-family: "OE Doo Pro - regular";
+        }
+      }
+      .block-webform{
+        margin-top: 41px;
+        h2{
+          margin: 0;
+          text-align: center;
+          background-color: $pink;
+          border-bottom: 1px solid #fff;
+          padding: 9px 20px 7px;
+          line-height: 1.6em;
+          font-family: "OE Doo Pro - regular";
+          font-size: 1.125em;
+          font-weight: normal;
+        }
+        .form-item{
+          float:left;
+          margin: 0;
+          width: 70%;
+          @media (min-width: 769px) and (max-width: 1180px){
+            width: calc(100% - 86px);
+          }
+          input{
+            font-size: 0.95em;
+            background-color: #cf59a5;
+            height: 41px;
+            padding: 11px;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+          }
+          label{
+            position: absolute;
+            padding: 11px;
+            &:after{
+              display: none;
+            }
+          }
+          &.focus{
+            label{
+              display: none;
+            }
+          }
+        }
+        .form-actions{
+          clear:right;
+          float:right;
+          margin: 0;
+          width: 30%;
+          @media (min-width: 769px) and (max-width: 1180px){
+            width: 86px;
+          }
+          input{
+            padding: 2px 17px 0px;
+            font-size: 0.95em;
+            background: url("../images/arrow-right-white.png") no-repeat right 11px center $pink;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            border: none;
+            width: 100%;
+            height: 41px;
+            box-sizing: border-box;
+            text-align: left;
+            &:hover{
+              background-position: right 5px center;
+            }
+          }
+        }
+      }
+    }
+    .region-footer-left{
+      width: 69%;
+      float: left;
+      @include res(s-m){
+        width: 100%;
+      }
+      .menu--who-are-you---footer{
+        width: 41%;
+        @include res(s-m){
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
+      .menu--israel-innovation-authority{
+        width: 59%;
+        @include res(s-m){
+          width: 100%;
+          margin-bottom: 30px;
+        }
+        li{
+          width: 50%;
+          float: left;
+        }
+      }
+      .block-menu{
+        float: left;
+        padding-right: 20px;
+        box-sizing: border-box;
+        h2{
+          margin: 0;
+          font-family: "OE Doo Pro - regular";
+          font-size: 1.125em;
+          line-height: 1.7em;
+          font-weight: normal;
+          border-bottom: 1px solid #8f8daf;
+          padding-right: 33px;
+          margin-bottom: 17px;
+          float: left;
+           + ul{
+            clear: both;
+           }
+        }
+        ul li{
+          padding: 2px 0;
+          a{
+            color: #c9c9c9;
+            font-size: 0.93em;
+            line-height: 1em;
+          }
+        }
+      }
+    }
+  }
+  .region-bottom-footer{
+    clear: both;
+    float: left;
+    width: 100%;
+    .social{
+      float: left;
+      @include res(s-m){
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      h2{
+        margin: 0;
+        font-weight: normal;
+        font-family: "OE Doo Pro - regular";
+        font-size: 1em;
+        line-height: 1.5em;
+        float: left;
+      }
+      .field--name-field-links{
+        float: left;
+        margin-left: 18px;
+        > .field__item{
+          display: inline-block;
+          margin-right: 20px;
+        }
+      }
+    }
+    .menu--bottom-footer{
+      float: right;
+      li{
+        font-size: 0.875em;
+        line-height: 0.875em;
+        display: inline-block;
+        border-right: 1px solid #fff;
+        margin-right: 10px;
+        padding-right: 10px;
+        &:last-child{
+          margin-right: 0;
+          padding-right: 0;
+          border: none;
+        }
+      }
+    }
+  }
+}
+/********  front   *********/
+
+.path-frontpage{
+  #block-page-title-block{
+    display: none;
+  }
+  main{
+    padding-left: 0;
+    .layout-content{
+      padding: 0;
+      width: 100%;
+    }
+  }
+  #second{
+    padding-left: 232px;
+    @include res(s-m){
+      padding-left: 0;
+    }
+    .region-content-bottom .block{
+      @include width;
+    }
+  }
+  article{
+    position: relative;
+    min-height: 630px;
+    @include res(s-m){
+      height: auto!important;
+      min-height: 0;
+    }
+    .logos{
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      left: 0;
+      .israel{
+        left: 20px;
+        float: left;
+        position: relative;
+        @include res(s-m){
+          width: 25px;
+        }
+      }
+      .logo-hp{
+        width: 100%;
+        text-align: center;
+        img{
+          @include res(s-m){
+            width: 120px;
+          }
+        }
+      }
+    }
+    .wrapper-top-home-page{
+      background-position: top!important;
+      background-repeat: no-repeat!important;
+      background-size: cover!important;   
+      width: 100%;
+      height: 100%;
+      @include res(s-m){
+        box-sizing: border-box;
+        padding: 0 4%;
+      }
+    }
+    .node__content{
+      position: relative;
+      top: 75px;
+      left:0;
+      width: 100%;
+      height: calc(100% - 75px);
+      @include res(s-m){
+        height: 100%;
+        padding-top: 90px;
+        padding-bottom: 45px;
+        top: 0;
+      }
+      @include center;
+      .top-content{
+        width: 710px;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        h2{
+          margin: 0;
+          font-size: 1em;
+        }
+        .field--name-field-top-title{
+          font-family: 'OE Doo Pro - regular';
+          font-size: 2.5em;
+          line-height: 1.12em;
+          @include res(s-m){
+            font-size: 2em;
+          }
+        }
+        .field--name-field-subtitle{
+          font-family: 'OE Doo Pro - regular';
+          font-size: 1.25em;
+          line-height: 1.4em;
+          padding-top: 4px;
+        }
+      }
+    }
+    .link-area{
+      margin: 35px auto 0;
+      padding: 106px 37px 30px 35px;
+      width: 881px;
+      max-width: 100%;
+      overflow: hidden;
+      background-position: top!important;
+      background-repeat: no-repeat!important;
+      background-size: cover!important;  
+      box-sizing: border-box;
+      @include res(s-m){
+        padding: 30px 35px;
+      }
+      h3{
+        margin: 0;
+        font-size: 1em;
+        .field--name-field-link-title{
+          font-family: 'OE Doo Pro - regular';
+          font-size: 1.625em;
+          line-height: 0.9em;   
+          font-weight: normal;  
+          padding-bottom: 10px;  
+        }
+      }
+      .field--name-field-link-teaser{
+        font-size: 1.125em;
+        line-height: 1.5em;   
+        float: left;
+        width: calc(100% - 180px);
+        @include res(s-m){
+          width: 100%;
+        }
+      }
+      .field--name-field-the-link{
+        float: right;
+        width: 140px;
+        @include res(s-m){
+          float: none;
+          clear: both;
+          padding-top: 10px;
+        }
+        a{
+          @include button;
+        }
+      }
+    }
+    .wrapper{
+      color: #fff;
+      width: 100%;
+      a{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.scroll-button{
+  margin-top: 24px;
+  text-align: center;
+  @include res(s-m){
+    display: none;
+  }
+  span{
+    color:#fff;
+    position: relative;
+    display:block;
+    padding:10px 0 22px;
+    width: 100px;
+    margin: 0 auto;
+    font-family: 'Open Sans Hebrew', sans-serif; 
+    font-size: 1.125em;
+    cursor: pointer;
+    &:after{
+      content: "";
+      width: 100%;
+      height: 30px;
+      background: url("../images/white_arrow_down.png") no-repeat center bottom;
+      display: inline-block;
+      animation: bounce 2s infinite alternate;
+      -webkit-animation: bounce 1.5s infinite alternate;
+    }
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(30px);
+    }
+    to {
+      transform: translateY(-7px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(30px);
+    }
+    to {
+      transform: translateY(-7px);
+    }
+  }
+}
+
+#block-views-block-success-stories-block-1{
+  .view-header{
+    h3{
+      color: $default;
+      font-family: "OE Doo Pro - regular";
+      font-size: 1.75em;
+      line-height: 0.9em;  
+      margin: 30px 0 25px;  
+      background: url("../images/success_zira_icon.png") no-repeat left center;
+      padding-left: 30px;
+      a{
+        display: block;
+        padding-top: 11px;
+      }
+    }
+  }
+  .view-content{
+    position: relative;
+  }
+  .owl-item{
+    margin-right: 20px!important;
+  }
+  .views-row{
+    background-color: #fff;
+    padding: 0 17px 15px;
+    .views-field-field-logo{
+      float: left;
+      width: 100%;
+      a{
+        float: right;
+      }
+      img{
+      }
+    }
+    .views-field-field-teaser{
+      color: $gray;
+      font-size: 0.875em;
+      line-height: 1.4em;      
+    }
+  }
+  .owl-controls{
+    .owl-next, .owl-prev{
+      text-indent: -9999px;
+      position: absolute;
+      top: 50%;
+      width: 18px;
+      height: 29px;
+    }
+    .owl-prev{
+      background: url("../images/arrow-left.png") no-repeat left center;
+      left: -4%;
+      @include res(s-m-l){
+        left: -3%;
+      }
+    }
+    .owl-next{
+      background: url("../images/arrow-right.png") no-repeat left center;
+      right: -4%;
+      @include res(s-m-l){
+        right: -3%;
+      }
+    }
+  }
+}

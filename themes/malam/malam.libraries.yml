@@ -1,0 +1,19 @@
+base:
+  css:
+    theme:
+      stylesheets/malam.css: {}
+      js/owl-carousel/assets/owl.carousel.css: {}
+  js:
+    js/owl-carousel/owl.carousel.min.js: {}
+    js/malam.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - core/drupal.ajax
+    - core/jquery.ui.effects.core
+    - core/jquery.ui.effects.slide
+    - core/jquery.ui.effects.size
+
+
+

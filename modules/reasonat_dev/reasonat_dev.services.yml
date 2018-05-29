@@ -1,0 +1,5 @@
+services:
+  reasonat_dev.subscriber:
+    class: Drupal\reasonat_dev\EventSubscriber\Reasonat_devSubscriber
+    tags:
+      - { name: event_subscriber }

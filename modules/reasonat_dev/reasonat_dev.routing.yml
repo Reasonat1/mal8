@@ -1,0 +1,7 @@
+reasonat_dev.admin_settings:
+  path: '/admin/config/development/reasonat_dev'
+  defaults:
+    _form: '\Drupal\reasonat_dev\Form\ModuleConfigurationForm'
+    _title: 'Reasonat_dev password configuration'
+  requirements:
+    _permission: 'administer site configuration'

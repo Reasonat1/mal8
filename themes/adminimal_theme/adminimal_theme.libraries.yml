@@ -1,0 +1,7 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/adminimal.css: {}
+  js:
+    js/dayan.js: {}
