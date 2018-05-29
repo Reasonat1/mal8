@@ -172,6 +172,7 @@ img{
 header{
   width: 232px;
   left: 0;
+  float: left;
   position: sticky;
   top: 0;
   z-index: 200;
@@ -394,7 +395,24 @@ header{
   right: 0;
 }
 
+/********  footer  **********/
 
+footer{
+  clear: both;
+  background-color: $default;
+  color: #fff;
+  a, ul.menu a{
+    color: #fff;
+    &.is-active, .active{
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+}
 /********  front   *********/
 
 .path-frontpage{
