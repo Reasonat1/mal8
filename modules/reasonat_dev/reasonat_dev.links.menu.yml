@@ -1,6 +1,0 @@
-reasonat_dev.admin_settings:  
-  title: 'Reasonat_dev password'  
-  route_name: reasonat_dev.admin_settings  
-  description: 'Reasonat_dev password'  
-  parent: system.admin_config_development  
-  weight: 99

@@ -1,9 +1,0 @@
-<?php
-
-/**
- * @file
- */
-
-function reasonat_dev_page_alter(&$page)  {
-	dpm($page);
-}
