@@ -1,0 +1,14 @@
+name: Event
+description: 'Provides Event content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - field
+  - file
+  - image
+  - menu_ui
+  - node
+  - path
+  - text
+  - user
+  - webform
